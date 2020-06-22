@@ -1,0 +1,29 @@
+<%- include ('partials/header'); %>    
+
+<div class="container" style="margin-top:55px ;">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <ul class="list-group">
+                <% user. contacts.forEach(function(contacts){  %>
+                    <li class="list-group-item">
+                        <img style="float:left" src="https://www.kindpng.com/picc/m/495-4952535_create-digital-profile-icon-blue-user-profile-icon.png" 
+                            alt="user_img" height="60" width="60">
+                            <h4 style="margin-top:12px"><%= contacts.name %></h4>
+                        <br>
+                        Phone No : <%= contacts.phoneno %><br>
+                        Email : <%= contacts.email %><br>
+                        Address : <%= contacts.address %><br><br>
+                        <a href="/contacts/<%=contacts._id %>/edit"><button class="btn btn-outline-success">Edit</button></a>  
+                        <form style="display:inline" action="/contacts/<%=contacts._id%>?_method=DELETE" method="POST">
+                            <button class="btn btn-outline-danger">Delete</button>
+                        </form>
+                    </li>
+                    <% }); %>
+            </ul>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>   
+
+<%- include ('partials/footer'); %>

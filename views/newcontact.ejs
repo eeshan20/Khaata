@@ -1,0 +1,32 @@
+<%- include ('partials/header'); %>    
+<h1 class="text-center">ADD USER</h1><br>
+<div class= "container">
+    <div class= "row">
+        <div class="col-sm-3">      
+      </div>
+        
+        <div class="col-sm-6">    
+            <form action="/contacts" method="POST">
+                <div class="form-group">
+                  <label class="flabel">Name</label>          
+                  <input type="text" class="form-control" name="contact[name]" placeholder="Enter Name">
+                </div>
+                <div class="form-group">
+                  <label class="flabel">Phone No.</label>
+                  <input type="number" class="form-control" id="phoneno" name="contact[phoneno]" placeholder="Enter Phone No.">
+                </div>
+                <div class="form-group">
+                    <label class="flabel">Email</label>
+                    <input type="email" class="form-control" id="email" name="contact[email]" placeholder="Enter Email">
+                  </div>
+                <div class="form-group">
+                    <label class="flabel">Address</label>
+                    <textarea class="form-control" name="contact[address]"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-outline-dark">Add User</button>
+              </form>
+        </div>
+        <div class="col-sm-3">        </div>
+    </div>
+</div>
+<%- include ('partials/footer'); %>    
